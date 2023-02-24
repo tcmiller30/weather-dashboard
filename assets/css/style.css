@@ -1,0 +1,79 @@
+:root{
+    --burnt-sienna: #dd6e42ff;
+    --timberwolf: #cdd6d0ff;
+    --steel-blue: #3f88c5ff;
+    --prussian-blue: #032b43ff;
+    --pine-green: #136f63ff;
+    --primary: #0d6efd;
+}
+body{
+    background-color: var(--burnt-sienna);
+}
+header{
+    text-align: center;
+}
+input{
+    height: 2.5em;
+}
+img{
+    object-fit: scale-down;
+}
+#title{
+    color: #fff;
+    background-color: var(--burnt-sienna);
+    border: 10px solid var(--primary);
+    width: 40%;
+    position: relative;
+    left: 30%;
+    padding:10px;
+    
+}
+#currentWeatherImage{
+    border: 5px solid var(--burnt-sienna);
+    object-fit: contain;    
+}
+#search-container{
+    height: 85vh;
+    background-color: var(--timberwolf);
+    border: 7.5px solid var(--prussian-blue)
+}
+#results-container{
+    background-color: var(--timberwolf);
+    border: 7.5px solid var(--prussian-blue);
+}
+#currentWeatherRow{
+    border-bottom:5px dotted var(--burnt-sienna)
+}
+#forecastRow{
+    
+}
+#searchBtn{
+    /* background-color:cyan; */
+    border-radius: 7.5px;
+    height: 2.5em;
+}
+
+#citySearch{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 5px solid var(--pine-green);
+}
+.col{
+    /* border: 2px solid black; */
+}
+
+.pastResult{
+    width: 60%;
+}
+.card{
+    background-color: var(--prussian-blue);
+    border: 7.5px solid var(--primary);
+    color: var(--timberwolf)
+}
+.card-image{
+    background-color: var(--prussian-blue);
+    border: 5px solid var(--primary);
+    object-fit: contain;
+    margin: 1em 0
+}
