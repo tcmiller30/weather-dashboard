@@ -1,102 +1,51 @@
 # 06 Server-Side APIs: Weather Dashboard
 
-## Your Task
+## Description
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+This website can be used as an easy way to check the current weather or the future forecast of any city. Whether you're a frequent traveller trying to plan out outfits, curious about the current weather conditions around the world, or just trying to figure out if you're going to need to take a jacket, the weather dashboard can be used as a one-stop-shop for the information you need.
 
-Use the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. The base URL should look like the following: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`. After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
+Developing the Weather Dashboard has helped me grow more comfortable with things like jQuery, array manipulation in and out of localStorage, DOM Manipulation using the template literal, and API calls.
 
-**Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
+## Installation
+  
+N/A
 
-You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
+## Usage
+In order to use this website, open the webpage (https://tcmiller30.github.io/weather-dashboard/) in your browser. 
 
-## User Story
+The user will be presented with a series of empty containers waiting for data to be inputted by the user:
+- A search form asking for the user to input a city and a button to clear the Past Searches Container
+- A container that gets occupied by buttons with the values of the users recent searches
+- A container that will display the current date and current weather (temperature, wind speed, humidity, and weather condition) of the given city
+- A container that will display a 5-day forecast for the given city in a card group
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+After the user searches for a city name, data supplied by the OpenWeatherMap OneCall API will populate the empty fields as shown below in the example photo. In addition to the textual information, the user will also be presented with an icon that represents the current condition of the city (e.g. sunny, thunderstorms, partial clouds, etc.)
 
-## Acceptance Criteria
+After the user completes a search, their most recent query will be set to localStorage and appended to the top of the Past Searches container. A maximum of 9 searches will be displayed at a time. When the user has reached the maximum, they can either choose to clear the container using the button in the container above, or the least recent search will be removed from display as the most recent is appended to the top.
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
+All of the buttons in the Past Searches container can be interacted with by the user. When one is clicked, a new API call will be made using the button's value as a parameter. The called data will then be displayed to the screen, and the clicked button will be relocated from its current location in the container to the top, as it will have become the most recent search. The order of any buttons below the relocated button's original position will be unchanged, the rest will be moved down one space.
 
-## Mock-Up
+Below is a screenshot of what the website looks like at full size.
 
-The following image shows the web application's appearance and functionality:
+ ![Example Screenshot of the Weather Dashboard](assets/images/weather-dashboard-ex.png)
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+## Credits
 
-## Grading Requirements
+MDN Web Docs
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+    
 
-This Challenge is graded based on the following criteria: 
+## License
 
-### Technical Acceptance Criteria: 40%
+MIT License
 
-* Satisfies all of the above acceptance criteria plus the following:
+Copyright (c) [2022] [Travis Miller]
 
-    * Uses the OpenWeather API to retrieve weather data.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-    * Uses `localStorage` to store persistent data.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
