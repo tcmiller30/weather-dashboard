@@ -46,9 +46,14 @@ function fetchForecast(lat, lon){
         })
 }
 
+function createForecastCards(data){
+
+}
+
 $('#searchBtn').on('click', function(){
     var input = $('#input').val();
-    fetchCoordinates(input)
+    fetchCoordinates(input);
+    $('#input').val('');
 })
 
 $('.pastResult').on('click', function(){
