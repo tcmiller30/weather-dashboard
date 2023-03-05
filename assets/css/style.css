@@ -57,9 +57,6 @@ img{
     padding: 10px;
     border-bottom: 5px solid var(--burnt-sienna);
 }
-.col{
-    /* border: 2px solid black; */
-}
 
 .pastResult{
     width: 60%;
