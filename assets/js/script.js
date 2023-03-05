@@ -53,13 +53,15 @@ function forecastCards(data){
         var fHumid = `${data[i].humidity}%`;
 
         document.getElementById('forecastRow').innerHTML += 
-       `<div class="card p-3">
+       `<div class="col col-md-6 col-lg-4 mb-3">
+        <div class="card p-2 p-md-3">
         <h5 class="text-center">${fDate}</h5>
         <img src="${fIcon}" class="mx-2 rounded-circle card-image mb-3">
         <p>Temp: <span class="cardTemp">${fTemp}</span></p>
         <p>Wind: <span class="cardWind">${fWind}</span></p>
         <p>Humidity: <span class="cardHumid">${fHumid}</span></p>
-        </div>`
+        </div>
+        </div`
     }
     
 }
