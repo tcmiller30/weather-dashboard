@@ -2,7 +2,7 @@ var apiKey = '49c0818e6f1401c1322781925512f785'
 
 function fetchCoordinates(input){
     
-    var coordinatesRequestUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + input + '&limit=5&appid=' + apiKey;
+    var coordinatesRequestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + input + '&limit=5&appid=' + apiKey;
     fetch(coordinatesRequestUrl)
         .then(function(response){
             return response.json();
@@ -27,7 +27,7 @@ function fetchForecast(lat, lon){
             console.log(data);
             var unixTime = data.current.dt; 
             var cDate = dayjs.unix(unixTime).format('MM/DD/YYYY')
-            var cIcon = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
+            var cIcon = `https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
             $('#currentDate').text(cDate);
             // Current Weather
             $('#currentTemp').text(`${data.current.temp}\u00B0F`);
@@ -47,7 +47,7 @@ function forecastCards(data){
     $('#forecastRow').html('');
     for(var i = 0; i < 5; i++){
         var fDate = dayjs.unix(data[i].dt).format('MM/DD/YYYY');
-        var fIcon = `http://openweathermap.org/img/wn/${data[i].weather[0].icon}@2x.png`;
+        var fIcon = `https://openweathermap.org/img/wn/${data[i].weather[0].icon}@2x.png`;
         var fTemp = `${data[i].temp.day}\u00B0F`;
         var fWind = `${data[i].wind_speed}mph`;
         var fHumid = `${data[i].humidity}%`;
